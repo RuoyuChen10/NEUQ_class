@@ -1,0 +1,151 @@
+[1] Russakovsky O, Deng J, Su H, et al. Imagenct large scale visual recognition challengel.International Journal of Computer Vision,2015,115(3):211252.
+[2] Girshick R. Fast rcnn [C]. Proceedings of Proceedings of the IEEE International Conference on Computer Vision,2015.14401448.
+[3] Ren S. He K, Girshick R. et al. Faster RCNN: Towards realtime object detection with region proposal networks [C]. Proceedings of Advances in Neural Information Processing Systems,2015.9199.
+[4] Sakai T. Nagao M. Fujibayashi S. Line extraction and pattern detection in a photograph [J].Pattern recognition,1969,1(3):233248.
+[5] Ballard D H. Generalizing the Hough transform to detect arbitrary shapes [J]. Pattern recognition,1981,13(2):l1l122.
+[6] Sakai T. Nagao M, Kanade T, et al. Computer analysis and classification of photographs of human faces[M]. Kyoto University,1972.
+[7] Viola P. Jones M. Rapid object detection using a boosted cascade of simple features [C]Proceedings of Computer Vision and Pattern Recognition,2001. CVPR 2001. Proceedings of the 2001 IEEE Computer Society Conference on, volume 1. IEEE,2001.1511.
+[8] Jones M, Viola P. Fast multiview face detection [J]. Mitsubishi Electric Research Lab TR2000396.2003,3:14.
+[9] Rowley H A, Baluja S, Kanade T. Neural networkbased face detection [J]. Pattern Analysis and Machine Intelligence, IEEE Transactions on,1998,20(1):2338.
+[10] Osuna E, Freund R, Girosi F. Training support vector machines: an application to face detection IC]. Proceedings of Computer vision and patterm recognition,1997. Proceedings.,1997IEEE computer society conference on. IEEE,1997.130136.
+[11] Oren M, Papageorgiou C, Sinha C, et al. Pedestrian detection using wavelet templates IC].Proceedings of Computer Vision and Pattern Recognition,1997. Proceedings.1997 IEEE Computer Society Conference on. IEEE.1997.193199.
+[12] Dollar P. Wojek C, Schiele B. et al. Pedestrian detection: An evaluation of the state of the art J]. Pattern Analysis and Machine Intelligence. IEEE Transactions on,2012.34(4):743761.
+[13] Dalal N. Triggs B. Histograms of oriented gradients for human detection IC]. Proceedings of Computer Vision and Paterm Recognition,2005. CVPR 2005. IEEE Computer Society Conference on, volume 1. IEEE,2005.886893.
+[14] Leibe B. Seemann E. Schiele B. Pedestrian detection in crowded scenes (C]. Proceedings of Computer Vision and Pattern Recognition,2005. CVPR 2005. IEEE Computer Society Conference on, volume 1. IEEE,2005.878885.
+[15] Chum O. Zisseman A. An exemplar model for iearning object classes [C]. Proceedings of Computer Vision and Patern Recognition,2007. CVPR'07. IEEE Conference on. IEEE,2007.18.
+[16] Grauman K. Darrell T. The pyramid match kernel: Discriminative classification with setsof image features (C]. Proceedings of Computer Vision,2005. ICCV 2005. Tenth IEEE Intermational Conference on, volume 2. IEEE、2005.14581465.
+[17] Bourdev L, Malik J. Poselets: Body part detectors trained using 3d human pose annotations[C]. Proceedings of Computer Vision.2009 IEEE 12th International Conference on. IEEE.2009.13651372.
+[18] Girshick R, Donahue J, Darrell T, et al. Rich feature hierarchies for accurate object detection and semantic segmentation [C]. Proceedings of Proceedings of the IEEE conference on computer vision and patern recognition.2014.580587.
+[19] Lowe DG. Object recognition from local scaleinvariant features [C]. Proceedings of Computer vision,1999. The proceedings of the seventh IEEE international conference on, volume 2. leee,1999.11501157.
+[20] He D C. Wang L. Texture unit. texture spectrum. and texture analysis [J]. Geoscience and Remote Sensing, IEEE Transactions on,1990.28(4):509512.
+[21] Yang J. Yu K. Gong Y, et al. Linear spatial pyramid matching using sparse coding for image classification [C]. Proceedings of Computer Vision and Patern Recognition,2009. CVPR2009. IEEE Conference on. IEEE,2009.17941801.
+[22] Felzcnszwalb P, McAllester D, Ramanan D.A discriminatively trained, multiscale, deformable part model (C]. Proceedings of Computer Vision and Patten Recognition.2008.CVPR2008. IEEE Conference on. IEEE,2008.18.
+[23] Felzenszwalb PF. Girshick RB. McAllester D, et al. Object detection with discriminativelytrained partbased models [J]. Pattern Analysis and Machine Intelligence, IEEE Transactions on,2010,32(9):16271645.
+[24] Malisiewicz T. Gupta A. Efros A A. Ensemble of exemplarsvms for object detection and beyond[C]. Proceedings of Computer Vision(ICCV),2011 IEEE International Conference on. IEEE,2011.8996.
+[25] Sun M, Savarese S. Articulated partbased model for joint object detectionand pose estimation IC]. Proceedings of Computer Vision(ICCV),2011 IEEE International Conference on. IEEE.201l.723730.
+[26] Suga A. Fukuda K, Takiguchi T. et al. Object recognition and segmentation using SIFT and Graph Cuts (C]. Proceedings of Pattern Recognition,2008. ICPR 2008.19th International Conference on. IEEE,2008.14.
+[27] Ke Y, Sukthankar R. PCASIFT:A more distinctive representation for local image descriptors[C]. Proceedings of Computer Vision and Patem Recognition,2004. CVPR 2004. Proceedings of the 2004 IEEE Computer Society Conference on, volume 2. IEEE,2004. Il506.
+[28] DonahueJ, Jia Y, Vinyals O, et al. Decaf:A deep convolutional activation feature for generic visual recognition [J] arXiv preprint arXiv:1310.1531,2013..
+[29] Krizhevsky A, Sutskever l, Hinton G E. Imagenet classification with deep convolutional neural networks [C]. Proceedings of Advances in neural information processing systems,2012.10971105.
+[30] Vedaldi A. Gulshan V, Varma M, et al. Multiple kernels for object delection [C]. Proceedings of Computer Vision,2009IEEE 12th Intermational Conference on. IEEE,2009.606613.
+[31] Sermanet P, Eigen D, Zhang X, ct al. Overfeat: Integrated recognition, localization and detection using convolutional networks [J]. arXiv preprint arXiv:1312.6229,2013..
+[32] Uijlings JR, Sande K E, Gevers T, et al. Selective search for object recognition [J]. International journal of computer vision,2013,104(2):15417l.
+[33] Bay H, Tuytelaars T, Van Gool L. Surf: Speeded up robust features[C]. Proceedings of Computer visionECCV 2006. Springer,2006:404417.
+[34] He K, Sun J. Convolutional neural networks at constrained time cost [C]. Proceedings of Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition,2015.53535360.
+[35] Szegedy C, Vanhoucke V, lofe S, et al. Rethinking the Inception Architecture for Computer Vision J]. arXiv preprint arXiv:l512.00567,2015.
+[36] He K, Zhang X, Ren S, et al. Deep Residual Learning for Image Recognition J] arXiv preprint arXiv:1512.03385,2015..
+[37] He K, Zhang x, Ren S, et al. Identity Mappings in Deep Residual Networks [J]. arXiv preprint arXiv:l603.05027,2016..
+[38] Dean T. Ruzon M. Segal M, et al. Fast. accurate detection of 100,000 object classes on a single machine[C]. Proceedings of Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition,2013.1814182l.
+[39] Yan J. LeiZ. Wen L. et al. The fastest deformable part model for object detection (C]. Proceedings of Proceedings of the IEEE Conference on Computer Vision and Patern Recognition,2014.24972504.
+[40] Cao X, Wei Y, Wen F, et al. Face alignment by explicit shape regression [J]. International Journal of Computer Vision.2014.107(2):177190.
+[41] Hornik K, Stinchcombe M. White H. Multilayer feedforward networks are universal approximators[J]. Neural networks,1989,2(5):359366.
+[42] Funahashi K 1. On the approximate realization of continuous mappings by neural networks[J]. Neural networks,1989,2(3):183192.
+[43] LeCun Y. Boser B. Denker JS. et al. Backpropagation applied to handwritten zip code recognition [J]. Neural computation,1989,1(4):541551.
+[44] Srivastava N, Hinton G. Krizhevsky A, et al. Dropout:A simple way to prevent neural networks from overfitting [J]. The Journal of Machine Leaming Research.2014.15(1):19291958.
+[45] Hinton G. Some demonstrations of the effects of structural descriptions in mental imagery J]. Cognitive Science,1979,3(3):231250.
+[46] Hinton GE. Osindero S. Teh Y W.A fast learming algorithm for deep belief nets [J]. Neural computation,2006,18(7):15271554.
+[47] Rumelhart D E, Hinton G E, Williams RJ. Learning representations by backpropagating errors [J]. Cognitive modeling.1988,5(3):1.
+[48] LeCun Y. Bottou L. Bengio Y, et al. Gradientbased learning applied to document recognition[J]. Proceedings of the IEEE,1998.86(11):22782324.
+[49] Bracewell R. The fourier transform and is applications [J]. New York,1965,5.
+[50] Deng 1, Dong w, Socher R. et al. Imagenet:A largescale hierarchical image database[C].Proceedings of Computer Vision and Patern Recognition.2009. CVPR 2009. IEEE Conference on. IEEE,2009.248255.
+[51] Zeiler M D, Fergus R. Visualizing and understanding convolutional networks IC]. Proceedings of Computer visionECCV 2014. Springer.2014:818833.
+[52] Simonyan K. Ziserman A. Very deep convolutional networks for largescale image recognition [J]. arXiv preprint arXiv:1409.1556.2014..
+[53] Szegedy C, Toshev A, Erhan D. Deep neural networks for object detection IC] Proceedings of Advances in Neural Information Processing Systems,2013.25532561.
+[54] Freund Y. Schapire RE.A decisiontheoretic generalization of online learming and an application to boosting [J] Journal of computer and system sciences.1997.55(1):119139.
+[55] Friedman JH. Greedy function approximation:a gradient boosting machine [J]. Annals of statistics,2001.11891232.
+[56] Schapire R E. Singer Y. Improved boosting algorithms using confidencerated predictions J].Machine learning,1999,37(3):297336.
+[57] Friedman J. Hastie T. Tibshirani R, et al. Additive logistic regression:a statistical view of boosting(with discussion and a rejoinder by the authors)[J]. The annals of statistics,2000.28(2):337407.
+[58] Quilan J. Learning efficient classification procedures and their application to chess end games[J] Machine Learning: An Artificial intelligence Approach,1983,1.
+[59] Utgoff PE. Incremental induction of decision trees [J] Machine leaming,1989,4(2):161186.
+[60] Breiman L. Random forests [J]. Machine learning,2001,45:532.
+[61] Burges CJ.A tutorial on support vector machines for pattern recognition (J]. Data mining and knowledge discovery,1998,2(2):l21167.
+[62] Cortes C. Vapnik V. Supportvector networks[J]. Machine learning.1995.20(3):273297.
+[63] Dai Q, Hoiem D. Learning to localize detected objects [C]. Proceedings of Computer Vision and Pattern Recognition (CVPR),2012 IEEE Conference on. IEEE,2012.33223329.
+[64] Ethan D. Szegedy C. Toshev A, et al. Scalable object detection using deep neural networks[C]. Proceedings of Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition,2014.21472154.
+[65] Arbelaez P, PontTuset J, Barron J, et al. Multiscale combinatorial grouping IC]. Proceedings of Proceedings of the IEEE Conference on Computer Vision and Patterm Recognition.2014.328335.
+[66] Krahenbuhl P, Koltun V. Geodesic object proposals (C]. Proceedings of Computer VisionECCV2014. Springer,2014:725739.
+[67] Humayun A. Li F. Rehg J. RIGOR: reusing inference in graph cuts for generating object regions IC]. Proceedings of Proceedings of the IEEE Conference on Computer Vision and Patterm Recognition,2014.336343.
+[68] CarreiraJ, Sminchisescu C. Cpmc: Automatic object segmentation using constrained parametric mincuts [J]. Pattem Analysis and Machine Intelligence, IEEE Transactions on,2012,34(7):13121328.
+[69] Zitnick CL. Dollar P. Edge boxes: Locating object proposals from edges [C]. Proceedings of Computer VisionECCV 2014. Springer.2014:391405.
+[70] Alexe B, Deselacrs T, Ferrari V. Measuring the objectness of image windows [J]. Pattern Analysis and Machine Intelligence, IEEE Transactions on,2012,34(11):21892202.
+[7l] Rahtu E. Kannala J. Blaschko M. Learning a category independent object detection cascade[C]. Proceedings of Computer Vision (ICCV)、2011 IEEE Intemational Conference on. IEEE,201l.10521059.
+[72] Felzenszwalb PF. Huttenlocher D P. Efficient graphbased image segmentation [J]. International Journal of Computer Vision.2004.59(2):167181.
+[73] Cai Z, Saberian M, Vasconcelos N. Learning complexityaware cascades for deep pedestriandetection [C]. Proceedings of Proceedings of the IEEE Intermational Conferencc on Computer Vision.2015.33613369.
+[74] Wang X, Yang M. Zhu S, et al. Regionlets for generic object detection [C]. Proceedings of Proceedings of the IEEE International Conference on Computer Vision,2013,1724.
+[75] Chatfield K, Lempitsky V S, Vedaldi A, et al. The devil is in the details: an evaluation of recent feature encoding methods [C]. Proceedings of BMVC, volume 2,2011.8.
+[76] Coates A, Ng A Y. The importance of encoding versus training with sparse coding and vector quantization [C]. Proceedings of Proceedings of the 28th International Conference on Machine Learming(ICML11).201l.921928.
+[77] Lowe DG. Distinctive image features from scaleinvariant keypoints [J]. International journal of computer vision.2004.60(2):91110.
+[78] Sivic J. Zisserman A. Video Google:A text retrieval approach to object matching in videos IC]. Proceedings of Computer Vision,2003. Proceedings. Ninth IEEE International Confer.ence on. IEEE,2003.14701477.
+[79] Lazebnik S, Schmid C, Ponce J. Beyond bags of features: Spatial pyramid matching for recognizing natural scene categories [C]. Proceedings of Computer Vision and Patterm Recognition.2006 IEEE Computer Society Conference on. volume 2. IEEE,2006.21692178.
+[80] Van Gemert JC, GeusebroekJM, Veenman CJ, et al. Kernel codebooks for scene categorization[C]. Proceedings of Computer VisionECCV 2008. Springer,2008:696709.
+[81] Wang J. Yang J. Yu K. et al. Localityconstrained linear coding for image classification IC].Proceedings of Computer Vision and Patern Recognition (CVPR),2010 IEEE Conference on. IEEE,2010.33603367.
+[82] Perronnin F, SanchezJ. Mensink T. Improving the fisher kemel for largescale image classification [C]. Proceedings of Computer VisionECCV 2010. Springer,2010:143156.
+[83] Lin M, Chen Q, Yan S. Network in network[J] arXiv preprint arXiv:1312.4400,2013..
+[84] Szegedy C, Liu W, Jia Y, et al. Going deeper with convolutions [C]. Proceedings of Proceed
+[85] Oquab M. Bottou L, Laptev I, et al. Learning and transferring midlevel image representations using convolutional neural networks IC]. Proceedings of Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition.2014.17171724.
+[86] Jia Y, Shelhamer E, Donahue J, et al. Cafe: Convolutional architecture for fast feature embedding IC]. Proceedings of Proceedings of the ACM International Conference on Multimedia.ACM,2014.675678.
+[87] Zou WY, Wang X, Sun M. et al. Generic object detection with dense neural patterns and regionlcts [J] arXiv preprint arXiv:1404.4316,2014..
+[88] He K, Zhang X, Ren S, et al. Spatial pyramid pooling in deep convolutional networks for visual recognition [J]. Pattern Analysis and Machine Intelligence, IEEE Transactions on.2015.37(9):19041916.
+[89] Szegedy C, Reed S, Erhan D, et al. Scalable, highquality object detection [J]. arXiv preprint arXiv:1412.1441,2014.
+[90] Long J, Shelhamcr E, Darrell T. Fully convolutional networks for semantic segmentation IC]. Proceedings of Proceedings of the IEEE Conference on Computer Vision and Patem Recognition,2015.34313440.
+[91] Nair V, Hinton G E. Rectified linear units improve restricted boltzmann machines [C]. Proceedings of Proceedings of the 27th International Conference on Machine Learming(ICML10),2010.807814.
+[92] Dai J, He K, Sun J. Instanceaware Semantic Segmentation via Multitask Network Cascades[J] arXiv preprint arXiv:l512.04412,2015..
+[93] Everingham M, Van Gool L, Williams C, et al. The pascal visual object classes challenge2007(voc2007) results(2007)[Z]、2008.
+[94] Hosang J, Benenson R, Schiele B. How good are detection proposals, really?J]. arXiv preprint arXiv:1406.6962.2014..
+[95] Hosang J, Benenson R. Dollar P, et al. What makes for effective detection proposals?[J].2015.
+[96] Chavali N. Agrawal H, Mahendru A, et al. ObjectProposal Evaluation Protocol is' Gameable'[J] arXiv preprint arXiv:1505.05836,2015..
+[97] Lenc K. Vedaldi A.RCNN minus R[J]. arXiv preprint arXiv:l506.06981,2015..
+[98] Lin T Y, Maire M. Belongie S, et al. Microsoft coco: Common objects in context [C]. Proceedings of Computer VisionECCV 2014. Springer,2014:740755.
+[99] Ren S, He K, Girshick R, et al. Object detection networks on convolutional feature maps[J].arXiv preprint arXiv:1504.06066,2015.
+[100] lofe S, Szegedy C. Batch normalization: Accelerating deep network training by reducing internal covariate shift [J]. arXiv preprint arXiv:1502.03167,2015.
+[101] Gidaris S, Komodakis N. Object Detection via a MultiRegion and Semantic SegmentationAware CNN Model [C]. Proceedings of Proceedings of the IEEE International Conference on Computer Vision,2015.11341142.
+[102] Dollar P. Welinder P. Perona P. Cascaded pose regression (C]. Proceedings of Computer Vision and Pattem Recognition(CVPR),2010 IEEE Conference on. IEEE,2010.10781085.
+[103] Cao C, Weng Y, Lin S, et al.3D shape regression for realtime facial animation [J]. ACM Transactions on Graphics(TOG).2013.32(4):41.
+[104] Xiong X, Torre F. Supervised Descent Method and its Applications to Face Alignment [C].Proceedings of Computer Vision and Pattern Recognition(CVPR),2013 IEEE Conference on. IEEE,2013.
+[105] BurgosArtizzu X P, Perona P, Dollar P. Robust face landmark estimation under occlusion IC]. Proceedings of Computer Vision(ICCV),2013 IEEE International Conference on. IEEE.2013.15131520.
+[106] Kazemi V, Sullivan J. One millisecond face alignment with an ensemble of regression trees[C]. Proceedings of Computer Vision and Pattem Recognition(CVPR),2014IEEE Conference on. IEEE,2014.18671874.
+[107] XingJ, Niu Z, Huang J, et al. Towards Multiview and Partiallyoccluded Face AlignmentIC]Proceedings of Computer Vision and Pattern Recognition(CVPR),2014 IEEE Conference on.IEEE,2014.18291836.
+[108] Zhang J, Shan S, Kan M, et al. Coarsetofine autoencoder networks(cfan) for realtime face alignment [C]. Proceedings of Computer VisionECCV 2014. Springer,2014:116.
+[109] Yan J, Lei Z, YiD, et al. Learn to Combine Multiple Hypotheses for Accurate Face Alignment [C]. Proceedings of Computer Vision Workshops(ICCVW),2013 IEEE International Conference on. IEEE.2013.392396.
+[110] Pham M T. Cham TJ. Fast training and selection of haar features using statistics in boostingbased face detection [C]. Proceedings of Computer Vision (ICCV)、2007 IEEE International Conference on,2007.
+[111] Fan RE, Chang K W, Hsich CJ, et al. LIBLINEAR:A library for large linear classification[J]. The Journal of Machine Learning Research.2008..
+[112] Belhumeur P N, Jacobs D W. Kriegman DJ, et al. Localizing parts of faces using a consensus of exemplars [C]. Proceedings of Computer Vision and Pattern Recognition(CVPR),20l1IEEE Conference on. IEEE,2011.
+[113] Le V, Brandt J, Lin Z. et al. Interactive facial feature localization [C]. Proceedings of 12th European Conference on Computer Vision(ECCV).2012..
+[114] Sagonas C, Tzimiropoulos G, Zafeiriou S, et al.A semiautomatic methodology for facial landmark annotation IC]. Proceedings of Computer Vision and Patern Recognition Workshops(CVPRW).2013 IEEE Conference on. IEEE.2013.896903.
+[115] Zhu X, Ramanan D. Face detection. pose estimation. and landmark localization in the wild[C]. Proceedings of Computer Vision and Pattern Recognition(CVPR).2012 IEEE Conference on. IEEE,2012.
+[116] Messer K. Matas J. Kitler J. et al. XM2VTSDB: The extended M2VTS database IC]. Proceedings of Second international conference on audio and videobased biometric person authentication. Citeseer,1999.
+[117] Zhou F, BrandtJ, Lin Z. Exemplarbased Graph Matching for Robust Facial Landmark Localization [C]. Proceedings of IEEE 14th International Conference on Computer Vision(ICCV).2013.
+[118] Milborrow S. Nicolls F. Locating facial features with an extended active shape model (C].Proceedings of Computer VisionECCV 2008. Springer,2008.
+[119] Zhu S. LiC. Loy CC. et al. Face Alignment by CoarsetoFine Shape Searching [C]. Proceedings of Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition,2015,49985006.
+[120] Zhang Z, Luo P, Loy CC, et al. Facial Landmark Detection by Deep Multitask Learning IC]Proceedings of Computer VisionECCV 2014. Springer,2014:94108.
+[121] GallJ. Lempitsky V. Classspecific hough forests for object detection (C]. Proceedings of Decision forests for computer vision and medical image analysis. Springer,2013:143157.
+[122] Jain V, LearnedMiller E G. Fddb:A benchmark for face detection in unconstrained settings[J]. UMass Amherst Technical Report,2010..
+[123] Schneiderman H, Kanade T. Probabilistic modeling of local appearance and spatial relationships for object recognition [C]. Proceedings of Computer Vision and Patterm Recognition,1998. Proceedings.1998 IEEE Computer Society Conference on. IEEE,1998.4551.
+[124] Viola P. Jones MJ. Robust realtime face detection [J] International journal of computer vision,2004,57(2):137154.
+[125] Mikolajczyk K, Schmid C. Zisserman A. Human detection based on a probabilistic assembly of robust part detectors [C]. Proceedings of Computer VisionECCV 2004. Springer,2004:6982.
+[126] Shen X. Lin Z. Brandt J, et al. Detecting and aligning facesby image retrieval [C]. Proceedings of Proceedings of the IEEE Conference on Computer Vision and Patern Recognition,2013.34603467.
+[127] LiH, Hua G, Lin Z, et al. Probabilistic elastic part model for unsupervised face detector adaptation [C] Proceedings of Proceedings of the IEEE International Conference on Computer Vision,2013.793800.
+[128] Segui S, Drozdzal M, Radeva P, et al. An Integrated Approach to Contextual Face Detection[J].2012.
+[129] LiJ, Wang T. Zhang Y. Face detection using surf cascade [C]. Proceedings of Computer Vision Workshops(ICCV Workshops),201l IEEE International Conference on. IEEE,2011.21832190.
+[130] Jain V, LearmedMiller E. Online domain adaptation of a pretrained cascade of classifiers IC]Proceedings of Computer Vision and Pattern Recognition(CVPR),201l IEEE Conference on.IEEE,2011.577584.
+[131] Subburaman V B. Marcel S. Fast bounding box estimation based face detection IC]. Proceedings of ECCV, Workshop on Face Detection: Where we are, and what next?,2010.
+[132] LiH, Lin Z, Brandt J, et al. Efficient boosted exemplarbased face detection IC]. Proceedings of Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition,2014.18431850.
+[133] LiJ, Zhang Y. Learning surf cascade for fast and accurate object detection [C]. Proceedings of Proccedings of the IEEE Conference on Computer Vision and Pattern Recognition,2013.34683475.
+[134] Pham M T, Gao Y, Hoang V D D, et al. Fast polygonal integration and its application in extending haarlike features to improve object detection [C]. Proceedings of Computer Vision and Pattern Recognition(CVPR),2010 IEEE Conference on. IEEE,2010.942949.
+[135] Brubaker S C, Wu J. Sun J, et al. On the design of cascades of boosted ensembles for face detection [J]. International Journal of Computer Vision,2008.77(13):6586.
+[136] Rastegari M. Ordonez V, Redmon J, et al. XNORNet: ImageNet Classification Using Binary Convolutional Neural Networks [J]. arXiv preprint arXiv:1603.05279,2016..
+[137] Courbariaux M, Bengio Y, David JP. Binary Connect: Training Decp Neural Networks with binary weights during propagations [C]. Proceedings of Advances in Neural Information Processing Systems,2015.31053113.
+[138] Han S, Mao H, Dally WJ. Deep Compression: Compressing Deep Neural Networks with Pruning. Trained Ouantization and Huffman Coding [J]. arXiv preprint arXiv:15l0.00149.2015..
+[139] Zhang X, Zou J, Ming X. et al. Efficient and accurate approximations of nonlinear convolutional networks [C]. Proceedings of Proceedings of the IEEE Conference on Computer Vision and Patterm Recognition.2015.19841992.
+[140] Gidaris S, Komodakis N. LocNet: Improving Localization Accuracy for Object Detection[J] arXiv preprint arXiv:1511.07763,2015..
+[141] Bell S, Zitnick CL. Bala K, et al. InsideOutside Net: Detecting Objects in Context with Skip Pooling and Recurent Neural Networks [J]. arXiv preprint arXiv:1512.04143,2015..
+[142] BurgosArtizu X. Perona P. Dollar P. Robust face landmark estimation under occlusion IC]Proceedings of Proceedings of the IEEE International Conference on Computer Vision.2013.15131520.
+[143] Cao Z, Yin O. Tang X, et al. Face recognition with learningbased descriptor [C]. Proceedings of Computer Vision and Patern Recognition(CVPR),2010IEEE Conference on. IEEE.2010.
+[144] Cootes TF, lonitaM C, Lindner C, et al. Robust and accurate shape model fiting usingrandom forest regression voting IC]. Proceedings of Computer VisionECCV 2012. Springer,2012:278291.
+[145] Lienhart R. Maydt J. An extended set of haarlike features for rapid object detection [C].Proceedings of lmage Processing.2002. Proceedings.2002 International Conference on, volume 1. IEEE,2002.I900.
+[146] OngEJ, Lan Y, Theobald B. et al. Robust facial feature tracking using selected multiresolution linear predictors [C]. Proceedings of computer vision,2009 IEEE 12th international conference on. IEEE,2009.14831490.
+[147] SheermanChase T, Ong EJ, Bowden R. Nonlinear predictors for facial feature tracking across pose and expression [C]. Proceedings of Automatic Face and Gesture Recognition(FG).2013 10th IEEE Intemational Conference and Workshops on. IEEE,2013.18.
+[148] Sun Y, Wang X, Tang X. Deep Convolutional Network Cascade for Facial Point Detection[C].Proceedings of Computer Vision and Pattern Recognition (CVPR).2013 IEEE Conference on.IEEE,2013.
+[149] Vens C, Costa F. Random forest based feature induction IC]. Proceedings of Ilth IEEE International Conference on Data Mining (ICDM).2011.
+[150] Yoo D, Park S, Lee JY, et al. AttentionNet: Aggregating Weak Directions for Accurate Object Detection [C]. Proceedings of Proceedings of the IEEE Intemational Conference on Computer Vision.2015.26592667.
+[151] Zhang W. Wang X, Tang X. Coupled informationtheoretic encoding for face photosketch recognition [C]. Proceedings of Computer Vision and Patem Recognition (CVPR),20ll IEEE Conference on. IEEE.2011.

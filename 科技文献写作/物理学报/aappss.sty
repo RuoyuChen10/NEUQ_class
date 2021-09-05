@@ -1,0 +1,210 @@
+i \ProvidesPackage{aappss}[2013/1/10 v1, by definition unizhang]
+ % input figure
+ \RequirePackage{graphicx}
+ % math packages
+ \RequirePackage{multicol,ifthen,booktabs,amsmath,amsfonts,bm,mathrsfs,amssymb}
+ % Font New Times Roman
+ \RequirePackage{times,mathptmx} \fontencoding{T1}
+ \RequirePackage{fancyhdr} %set page size
+ \textwidth=170truemm \textheight=242truemm \headsep=4truemm \footskip=25pt \oddsidemargin=0pt \evensidemargin=0pt
+ \headsep=1mm \topmargin=-5mm \voffset= 0mm \headheight=30.1pt  \marginparwidth=0pt
+ \marginparsep= 0pt \marginparpush=0pt \parskip=0pt plus.1pt minus.2pt
+ %\columnsep 9mm \setlength{\parindent}{2.15em}
+ %\setlength\arraycolsep{2pt} %\setlength{\multicolsep}{20mm}
+ \pagestyle{fancy} \fancyhf{}% empty footnote and headnote
+\parskip=0pt plus.1pt minus.1pt
+\abovedisplayskip=8pt plus.2pt minus.2pt
+\belowdisplayskip=8pt plus.2pt minus.2pt
+%  \newcommand{\pzh}{\scalebox{2.0}[1.5]{－}}
+%  \newcommand{\sjian}{\scalebox{1.5}[1.5]{$=$}}
+%  \newcommand{\djian}{\scalebox{1.5}[1.5]{---}}
+  \parskip=0pt plus.1pt minus.2pt \allowdisplaybreaks
+ %--------------------------------------------------------------
+\def\apsname{%\thispagestyle{empty}
+\vspace*{-10mm}\hbox
+to\textwidth{\vbox{\hfill\huge\sl Acta Physica Sinica\hfill}}
+\par\noindent\rule[3mm]{\textwidth}{0.2pt}\hspace*{-\textwidth}\noindent
+\rule[2.5mm]{\textwidth}{0.2pt}}
+\def\boldfont{\fontseries{bx}\selectfont\boldmath}
+%\def\fileno#1#2{\apsname\begin{flushright}\vspace{0mm} \framebox{\small 稿件编号: {#1} \quad 第一作者姓名: {#2}}\end{flushright} \vglue.2cm}
+\let\@apsyear\@empty\def\apsyear#1{\def\@apsyear{#1}}
+ \renewcommand{\headrulewidth}{0mm}%
+% \def\headrule{\kern 1mm \hrule width 17cm \kern 5mm}%
+ \def\footnoterule{\kern 1mm \hrule width 8cm \kern 2.2mm}%
+ \setcounter{page}{1}
+ \fancyfoot[C]{\small\tt\thepage}
+
+ \makeatletter
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\footnoterule}{\vglue1ex\noindent\rule{65mm}{0.3pt}\vglue2ex}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+
+\RequirePackage{type1cm}
+    \newcommand{\yihao}{\fontsize{27.5pt}{\baselineskip}\selectfont}
+    \newcommand{\xiaoyihao}{\fontsize{24pt}{\baselineskip}\selectfont}
+    \newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}
+    \newcommand{\xiaoerhao}{\fontsize{18pt}{\baselineskip}\selectfont}
+     \newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}
+    \newcommand{\xiaosanhao}{\fontsize{15pt}{\baselineskip}\selectfont}
+    \newcommand{\sihao}{\fontsize{13.75pt}{\baselineskip}\selectfont}
+    \newcommand{\xiaosihao}{\fontsize{12pt}{12.6pt}\selectfont}
+    \newcommand{\wuhao}{\fontsize{10.5pt}{12.6pt}\selectfont}
+    \newcommand{\xiaowuhao}{\fontsize{9pt}{11pt}\selectfont}
+    \newcommand{\liuhao}{\fontsize{7.87pt}{9.45pt}\selectfont}
+    \newcommand{\xiaoliuhao}{\fontsize{7.78pt}{8.65pt}\selectfont}
+    \newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}
+    \linespread{1.25}
+    \renewcommand{\normalsize}{\wuhao}
+
+
+%% 2012-9-3 reset vspace before and after section
+
+\def\section{\@startsection{section}{1}{\z@}%
+                                   {-2.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.5ex \@plus.2ex}%
+                                   {\normalfont\sihao\fangsong}}
+
+\def\subsection{\@startsection{subsection}{2}{\z@}%
+                                     {-2.0ex\@plus -1ex \@minus -.2ex}%
+                                     {2.0ex \@plus .2ex}%
+                                     {\boldmath\boldmath\heiti\xiaosihao}}
+
+\def\subsubsection{\@startsection{subsubsection}{3}{.5\z@}%
+                                     {-0.3ex\@plus -.5ex \@minus -.2ex}%
+                                     {.1ex \@plus 0.1ex \@minus -.1ex}%
+                                     {\normalfont\boldmath\bfseries\wuhao\heiti}}
+\renewcommand{\thesection}{\@arabic\c@section\kern-.4em}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}
+{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\CTEXsetup[aftername+={\hskip-5pt}]{subsection} %set distance after subsection number
+\CTEXsetup[aftername+={\hskip-5pt}]{subsubsection} %set distance after subsubsection number
+%\newcounter{subsubsubsection}[subsubsection] %% the fourth subsection definition
+%\newcommand\subsubsubsection{\@startsection{subsubsubsection}{4}{\z@}%
+%                                  {-3.25ex\@plus -1ex \@minus -.2ex}%
+%                                  {1.5ex \@plus .2ex}
+%                                   %{\normalfont\normalsize\bfit}[]}
+%                                  {\reset@font\sf}[]}%
+%\setcounter{secnumdepth}{4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\renewcommand{\thesubsubsubsection}
+%{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{subsubsubsection}.}%
+%%%%%%%%%%%%%%%%%%%%%%%
+\floatsep=0pt\textfloatsep=0pt \intextsep=0pt \doublerulesep=0.1pt
+%-------------- page body---------------
+\def\title#1{{\vspace{6pt} \begin{center}\baselineskip=25.7pt plus.2pt minus.2pt \erhao\heiti #1 \end{center} \vspace*{2mm}}}
+\def\author#1{{\begin{center}{\sihao \fangsong #1}\end{center}}}
+\def\address#1#2{{\centering{\protect\baselineskip=10pt\xiaowuhao {#1} {\hglue2pt(#2)}}\par}}
+\def\date#1#2{\vglue.4ex\centerline{\xiaowuhao({#1}收到; {#2}收到修改稿)}\par\vglue9pt}
+\def\abstract#1{\begin{center}\vglue.3cm\begin{minipage}{0.95\textwidth}\CJKindent \wuhao\songti #1 \end{minipage}\end{center} \vspace*{0.2ex}}
+\def\keywords#1{\begin{center}\vglue 3mm \begin{minipage}{0.95\textwidth} {\noindent\normalsize\CJKfamily{hei}{关键词:}~~{\songti #1}}\end{minipage}
+\end{center}}
+\def\pacs#1{\begin{center}\vglue 0mm \begin{minipage}{0.95\textwidth} {\noindent\normalsize{\bf PACS:}~~{#1}}\end{minipage}
+\end{center} \par}
+\def\cmail#1{\footnotetext{\hspace*{-.15cm}\xiaowuhao\begin{minipage}{160mm}
+\vglue1ex\begin{minipage}[c]{1.4mm}{$\dag$}\end{minipage}
+\begin{minipage}[c]{150mm}$\;$通信作者. E-mail: #1\end{minipage}
+\end{minipage}}}
+\def\cmailddag#1{\footnotetext{\hspace*{-.15cm}\xiaowuhao\begin{minipage}{160mm}
+\vglue1ex\begin{minipage}[c]{1.4mm}{$\ddag$}\end{minipage}
+\begin{minipage}[c]{150mm}$\;$通信作者. E-mail: #1\end{minipage}
+\end{minipage}}}
+\def\cfund#1{\footnotetext{\hspace*{-.15cm}\xiaowuhao\begin{minipage}{165.5mm}
+\vspace*{2pt} \begin{minipage}[t]{2mm} {\raisebox{-1.5pt}[0cm][0cm]{*}}\end{minipage}
+\begin{minipage}[t]{160.5mm}#1\end{minipage}
+\end{minipage}\vspace*{4.6pt}}}
+\def\etitle#1{{\vspace{6pt}\begin{center} \LARGE\bf #1 \end{center} \vspace*{2mm}}}
+\def\author#1{{\begin{center}{\Large #1}\end{center}}}
+\def\eaddress#1#2{{\centering{\large{#1}{\hglue2pt(\,{\it #2}\,)}}\vglue1pt}}
+\def\edate#1{\begin{center}\vglue-1.4ex{\small(#1)}\end{center}}
+
+\def\eabstract{\Large\vglue5ex\noindent\begin{minipage}{\textwidth}\parindent=20pt
+\begin{center}{\bf Abstract}\end{center}\par\vglue-9pt  \end{minipage}\par\vglue2pt}
+
+%\def\eabstract#1{\Large\vglue5ex\noindent\begin{minipage}{\textwidth}\parindent=20pt
+%\begin{center}{\bf Abstract}\end{center}\par\vglue-9pt #1 \end{minipage}\par\vglue2pt}
+
+\def\ekeywords#1{\vspace*{3ex}\noindent\protect\begin{minipage}[t]{\textwidth}
+\leftskip -0mm \protect{\begin{minipage}[t]{27.0mm}\Large\bf Keywords:
+{\;}\end{minipage}}\protect {\begin{minipage}[t]{100mm}\Large\baselineskip=1pt
+#1\end{minipage}}\end{minipage}\vspace*{-3ex}}
+
+\def\epacs#1{\begin{minipage}{\textwidth}\Large\leftskip-4.4ex\noindent{\bf PACS: \ } #1\end{minipage}\par\vglue.2cm}
+
+\def\efund#1{\footnotetext{\hspace*{-1.6mm}\normalsize\begin{minipage}{162.5mm}
+\baselineskip=8pt plus.2pt minus.1pt\vspace*{2pt}
+\begin{minipage}[t]{6pt}{\raisebox{-1.5pt}[0cm][0cm]{*}}\end{minipage}
+\begin{minipage}[t]{160.5mm}#1\end{minipage}
+\end{minipage}\vspace*{6.6pt}}}
+
+\def\email#1{\footnotetext{\hspace*{-1.6mm}\normalsize\begin{minipage}{168mm}
+\vglue1ex\begin{minipage}[t]{1mm}{\dag}\end{minipage}
+\begin{minipage}[t]{163mm}\ Corresponding author.  E-mail: #1\end{minipage}
+\end{minipage}}}
+\def\emailddag#1{\footnotetext{\hspace*{-1.6mm}\normalsize\begin{minipage}{168mm}
+\vglue1ex\begin{minipage}[t]{1mm}{\ddag}\end{minipage}
+\begin{minipage}[t]{163mm}\ Corresponding author.   E-mail: #1\end{minipage}
+\end{minipage}}}
+
+%----------------------
+%%%%%%%%%%2012-9-3 revised
+%\def\cdotsfill{\cleaders\hbox{$\m@th\mkern-2.5mu\cdots\mkern-2.5mu$}\hfill}
+%\def\dotfill{\cleaders\hbox{$\m@th \mkern1.5mu.\mkern1.5mu$}\hfill}
+%-------------------------------------------------------------
+\def\fivestar{\raisebox{0.8ex}[0cm][0cm]{\hglue-5pt\Large\;*}}
+%%%%%%%%%%%%%%%%%%%%%%%% 2012-9-3 revised
+%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\refname}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\refrule{\vglue5pt\centerline{\hbox to 8cm{\hrulefill}}\vglue10pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\def\ben{\lower-4.1pt\hbox{\vrule width10pt height1.4pt}} %% title bf em dash
+%\def\secben{\lower-3pt\hbox{\vrule width8pt height1.4pt}} %% section bf em dash
+%\def\subsecben{\lower-2.6pt\hbox{\vrule width7pt height1.4pt}} %% subsection bf em dash
+%\def\normben{\lower-2.03pt\hbox{\vrule width6pt height0.9pt}} %% normal text bf em dash
+%\def\normbem{\lower-2.03pt\hbox{\vrule width12pt height0.9pt}} %% normal text bf em dash
+%\def\bem{\lower-2.8pt\hbox{\kern2pt\vrule width14pt height1.6pt\kern2pt}} %% title bf en dash
+%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% reference definition
+
+%\def\reference#1{
+%\newcounter{ref}
+%\begin{list}{[\arabic{ref}]\hfill}
+%{\setlength{\parsep}{\parskip}
+% \setlength{\itemsep}{0ex plus.1ex}
+% \setlength{\labelwidth}{1.5em}
+% \setlength{\labelsep}{0.5em}
+% \setlength{\leftmargin}{2.2em}
+% \setlength{\rightmargin}{0em}
+% \usecounter{ref}
+% \upshape}
+% #1
+%\end{list}}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%\def\mylistlabel#1{#1}
+%\newenvironment{mylabellist}[1]
+%  {\hbadness=15000
+%\begin{list}{\mylistlabel}
+%    {\itemindent0pt % no item indent for the first line
+%    \leftmargin2\parindent % change the whole item indent
+%%\leftmargin18pt %
+%    \setlength{\parsep}{2pt}
+%             \setlength{\itemsep}{2pt}
+%             \let\makelabel\mylistlabel
+%              \settowidth{\labelwidth}{#1}
+%}
+%}
+%  {\end{list}}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%\endinput
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%\catcode`@=12
+\makeatother
+\endinput
