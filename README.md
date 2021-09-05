@@ -10,6 +10,8 @@ NEUQ 17级测控技术与仪器专业老学长，GPA第2，在就读期间多以
 
 ## 3. 下载单个文件夹
 
+一次性将整个仓库都复制下来会很占空间，建议选择需要的下载，可以按下面方法操作。
+
 复制该文件夹的网址，粘贴入DownGit中，选择download即可。
 
 http://zhoudaxiaa.gitee.io/downgit/#/home
