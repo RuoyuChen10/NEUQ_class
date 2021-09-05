@@ -1,0 +1,16 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Project:</h2>
+D:\00__淘宝数据\1__毕业设计\1__设计列表\17__自动浇花\17.3.__水箱水位检测\5__过程资料\5__程序设计\1-程序 - 水位2.4用于2.7k上拉电阻 - 校准后的\水位上下限报警.uvproj
+Project File Date:  04/11/2018
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+assembling STARTUP.A51...
+compiling C51.c...
+linking...
+Program Size: data=24.3 xdata=0 code=2272
+creating hex file from "水位上下限报警"...
+"水位上下限报警" - 0 Error(s), 0 Warning(s).
