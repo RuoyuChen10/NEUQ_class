@@ -1,0 +1,20 @@
+#include <reg52.h>
+#include <absacc.h>
+
+#define add XBYTE[0xff23] 		//8255控制地址
+#define PA XBYTE[0xff20]        	//段选信号地址
+#define PB XBYTE[0xff21] 	 	//片选信号地址 
+#define adc XBYTE [0xFF80] 		//[片选指针，A/D转换电路片外地址
+   
+#define uchar unsigned char		//宏定义	
+#define uint unsigned int					
+
+uchar code t[]={0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,
+				0x80,0x90,0x88,0x83,0xc6,0xa1,0x86,0x8e};		//七段共阴编码值
+.
+.
+.
+ 省略
+.
+.
+.

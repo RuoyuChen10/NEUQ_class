@@ -1,0 +1,51 @@
+A51 MACRO ASSEMBLER  1______________                                                      01/07/2020 03:49:18 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02c
+OBJECT MODULE PLACED IN .\Objects\1电机成功转起来.obj
+ASSEMBLER INVOKED BY: E:\Keil_v5\C51\BIN\A51.EXE 1电机成功转起来.asm SET(SMALL) DEBUG PRINT(.\Listings\1电机成功转起来.l
+                      st) OBJECT(.\Objects\1电机成功转起来.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 020100            2     LJMP MAIN
+0100                   3     ORG 0100H
+0100 D280              4     MAIN:   SETB P0.0
+0102 311A              5                     ACALL DELAY
+0104 C280              6                     CLR P0.0
+0106 D281              7                     SETB P0.1
+0108 311A              8                     ACALL DELAY
+010A C281              9                     CLR P0.1
+010C D282             10                     SETB P0.2
+010E 311A             11                     ACALL DELAY
+0110 C282             12                     CLR P0.2
+0112 D283             13                     SETB P0.3
+0114 311A             14                     ACALL DELAY
+0116 C283             15                     CLR P0.3
+0118 80E6             16                     SJMP MAIN
+011A 780F             17     DELAY:  MOV R0,#0FH
+011C 793F             18     DEL1:   MOV R1,#03FH
+011E D9FE             19     DEL2:   DJNZ R1,DEL2
+0120 D8FA             20                     DJNZ R0,DEL1
+0122 22               21                     RET
+                      22     END
+A51 MACRO ASSEMBLER  1______________                                                      01/07/2020 03:49:18 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DEL1 . . . . . . .  C ADDR   011CH   A   
+DEL2 . . . . . . .  C ADDR   011EH   A   
+DELAY. . . . . . .  C ADDR   011AH   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
