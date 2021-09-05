@@ -1,0 +1,288 @@
+﻿/**
+ * 域名配置
+ * 注意：此文件需放在引用她的脚本前面才能生效
+ */
+var DomainUrlHelper = {
+    PassportAction: "http://saishi.cnki.net/passport/",
+    InstituCenterAction: "http://saishi.cnki.net/ecenter/",
+    SourchPath: "http://saishi.cnki.net/resource/",
+    WebAction: "http://saishi.cnki.net/",   
+    SourchPathAction: "http://saishi.cnki.net/resource/",
+    PersonalCenterAction: "http://saishi.cnki.net/pcenter/",
+    TakingExamsAction: "http://saishi.cnki.net/exam/",
+    TuPianAction: "http://saishi.cnki.net/tupian/",
+    TouchAction: "http://saishi.cnki.net/m/"
+
+}
+
+//删除字符串中的标签，空格，空白字符
+function removeHTMLTag(str) {
+    str = str.replace(/<\/?[^>]*>/g, ''); //去除HTML tag
+    str = str.replace(/[ | ]*\n/g, '\n'); //去除行尾空白
+    //str = str.replace(/\n[\s| | ]*\r/g,'\n'); //去除多余空行
+    str = str.replace(/&nbsp;/ig, '');//去掉&nbsp;
+    return str;
+}
+
+
+function removeHTMLTag_KeepImg(strHtml) {
+    var appendHtml = "";
+    var purlText = "";
+    var curText = "";
+    var partHtmls = strHtml.split(/\<img\s*src=\"([^\"]*?)\"[^>]*>/gi);
+    for (var i = 0; i < partHtmls.length; i++) {
+        //document.write(partHtmls[i]);//输出分割的内容及（）指定的匹配的内容
+        curText = partHtmls[i];//清除标签
+        if (curText.toLowerCase().endWith('.jpg') || curText.toLowerCase().endWith('.jpeg')
+            || curText.toLowerCase().endWith('.gif')
+            || curText.toLowerCase().endWith('.png')
+            || curText.toLowerCase().endWith('.bmp')) {
+            appendHtml += "<img src='" + curText + "'/>";
+        }
+        else {
+            purlText = removeHTMLTag(curText)
+            if (purlText != "") {
+                appendHtml += purlText.replaceAll(keyword, "<span class='strong'>" + keyword + "</span>");;
+            }
+        }
+    }
+    return appendHtml;
+}
+
+///<summary>获得字符串实际长度，中文2，英文1</summary>
+///<param name="str">要获得长度的字符串</param>
+function getStrLength(str) {
+    var realLength = 0, len = str.length, charCode = -1;
+    for (var i = 0; i < len; i++) {
+        charCode = str.charCodeAt(i);
+        if (charCode >= 0 && charCode <= 128) realLength += 1;
+        else realLength += 2;
+    }
+    return realLength;
+};
+
+
+//js截取字符串，中英文都能用  
+//如果给定的字符串大于指定长度，截取指定长度返回，否者返回源字符串。  
+//字符串，长度  
+
+/** 
+ * js截取字符串，中英文都能用 
+ * @param str：需要截取的字符串 
+ * @param len: 需要截取的长度 
+ * @param showshengluehao: 显示省略号，true,false 
+ */
+function cutStr(str, len,showshengluehao) {
+    var str_length = 0;
+    var str_len = 0;
+    str_cut = new String();
+    str_len = str.length;
+    for (var i = 0; i < str_len; i++) {
+        a = str.charAt(i);
+        str_length++;
+        if (escape(a).length > 4) {
+            //中文字符的长度经编码之后大于4  
+            str_length++;
+        }
+        str_cut = str_cut.concat(a);
+        if (str_length >= len) {
+            if(showshengluehao)
+                str_cut = str_cut.concat("...");
+            return str_cut;
+        }
+        
+    }
+    //如果给定字符串小于指定长度，则返回源字符串；  
+    if (str_length < len) {
+        return str;
+    }
+}
+
+
+// 判断页面是否已加载了某个.js或者.css文件
+// alert(isInclude("abc.js"));
+function isInclude(name) {
+    var js = /js$/i.test(name);
+    var es = document.getElementsByTagName(js ? 'script' : 'link');
+    for (var i = 0; i < es.length; i++)
+        if (es[i][js ? 'src' : 'href'].indexOf(name) != -1) return true;
+    return false;
+}
+//动态加载 CSS 文件
+//dynamicLoading.css("test.css");
+//动态加载 JS 文件
+//dynamicLoading.js("test.js");
+var dynamicLoading = {
+    css: function (path) {
+        if (!path || path.length === 0) {
+            throw new Error('argument "path" is required !');
+        }
+        var head = document.getElementsByTagName('head')[0];
+        var link = document.createElement('link');
+        link.href = path;
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        head.appendChild(link);
+    },
+    js: function (path) {
+        if (!path || path.length === 0) {
+            throw new Error('argument "path" is required !');
+        }
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.src = path;
+        script.type = 'text/javascript';
+        head.appendChild(script);
+    }
+}
+
+function ConsoleLog(content) {
+    try {
+        if (window.console) {
+            //console.log(content);
+        }
+
+    } catch (e) {
+
+    }
+}
+
+window.console = window.console || (function () {
+    var c = {}; c.log = c.warn = c.debug = c.info = c.error = c.time = c.dir = c.profile = c.clear = c.exception = c.trace = c.assert = function () { };
+    return c;
+})();
+
+
+// --------------------------------------------------
+// 除去两边空白 
+if (!String.prototype.trim) {
+    String.prototype.trim = function () {
+        return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+    };
+}
+
+if (!String.prototype.startWith) {
+    String.prototype.startWith = function (str) {
+        var reg = new RegExp("^" + str);
+        return reg.test(this);
+    }
+}
+
+if (!String.prototype.endWith) {
+    String.prototype.endWith = function (str) {
+        var reg = new RegExp(str + "$");
+        return reg.test(this);
+    }
+}
+
+/**
+ * 是否包含特殊字符。包含，返回true，不包含，返回false
+ */
+function containIllegalChar(str) {
+    if (/[`~!@#$%^&*()+<>?:"{},.\/;'[\]]/im.test(str)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/**
+ * 是否是URL格式
+ */
+function isURL(str) {
+    //判断URL地址的正则表达式为:http(s)?://([\w-]+\.)+[\w-]+(/[\w- ./?%&=]*)?
+    //下面的代码中应用了转义字符"\"输出一个字符"/"
+    var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+    var objExp = new RegExp(Expression);
+    if (objExp.test(str) == true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+function isTel(str) {
+    var pa = /^1[3|4|5|7|8]\d{9}$/;
+    if (pa.test(str)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isYanZhengCode(str) {
+    var pa = /^\d{4}$/;
+    if (pa.test(str)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+function isEmail(str) {
+    //var pa = /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,40}[a-z0-9]+$/;
+    var pa = /^([a-zA-Z0-9])+([a-zA-Z0-9_\.\-])*@[A-Za-z0-9]+([-.][A-Za-z0-9]+)*\.[A-Za-z0-9]+([-.][A-Za-z0-9]+)*$/;
+    if (pa.test(str)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+function isIdCard(idCard) {
+    //15位和18位身份证号码的正则表达式
+    var regIdCard = /^(^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$)|(^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])((\d{4})|\d{3}[Xx])$)$/;
+    //如果通过该验证，说明身份证格式正确，但准确性还需计算
+    if (regIdCard.test(idCard)) {
+        if (idCard.length == 18) {
+            var idCardWi = new Array(7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2); //将前17位加权因子保存在数组里
+            var idCardY = new Array(1, 0, 10, 9, 8, 7, 6, 5, 4, 3, 2); //这是除以11后，可能产生的11位余数、验证码，也保存成数组
+            var idCardWiSum = 0; //用来保存前17位各自乖以加权因子后的总和
+            for (var i = 0; i < 17; i++) {
+                idCardWiSum += idCard.substring(i, i + 1) * idCardWi[i];
+            }
+            var idCardMod = idCardWiSum % 11;//计算出校验码所在数组的位置
+            var idCardLast = idCard.substring(17);//得到最后一位身份证号码
+            //如果等于2，则说明校验码是10，身份证号码最后一位应该是X
+            if (idCardMod == 2) {
+                if (idCardLast == "X" || idCardLast == "x") {
+                    //alert("恭喜通过验证啦！");
+                    return true;
+                } else {
+                    //alert("身份证号码错误！");
+                    return false;
+                }
+            } else {
+                //用计算出的验证码与最后一位身份证号码匹配，如果一致，说明通过，否则是无效的身份证号码
+                if (idCardLast == idCardY[idCardMod]) {
+                    //alert("恭喜通过验证啦！");
+                    return true;
+                } else {
+                    //alert("身份证号码错误！");
+                    return false;
+                }
+            }
+        }
+    } else {
+        //alert("身份证格式不正确!");
+        return false;
+    }
+}
+// -------------------------
+//解决IE10以下不支持Function.bind
+if (!Function.prototype.bind) {
+    Function.prototype.bind = function (oThis) {
+        if (typeof this !== "function") {
+            throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
+        }
+        var aArgs = Array.prototype.slice.call(arguments, 1),
+            fToBind = this,
+            fNOP = function () { },
+            fBound = function () {
+                return fToBind.apply(this instanceof fNOP && oThis ? this : oThis,
+                    aArgs.concat(Array.prototype.slice.call(arguments)));
+            };
+        fNOP.prototype = this.prototype;
+        fBound.prototype = new fNOP();
+        return fBound;
+    };
+}

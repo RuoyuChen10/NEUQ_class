@@ -1,0 +1,295 @@
+﻿/*
+依赖于jquery，layer， webConfig
+example：
+    $(function () {
+        $(".add-tiku-button").collectQuestion({
+            urlGetFavoriteGroup: "api/Search/GetSearchFavaror/",
+            urlGetQuestionGroup: "api/Search/GetSelectGroup?QuestionGUID=",
+            urlAddNewFavorite: "api/Search/AddGroup?Question=",
+            urlAddToFavorite:  "api/Search/UpdatItemGroupTrain"                
+        });
+    });
+*/
+(function ($) {
+    function create(target) {
+        target.onclick = openDialog.bind(target);
+    };
+    function openDialog() {
+        var target = this;
+        var state = $.data(this, "collectQuestion");
+        if (!state.hasLogin) {
+            //layer.alert("登录用户才能将单题添加到分组！", { icon: 4, btn: ['登录'] }, function (index) {
+            //    window.location.href = DomainUrlHelper.PassportAction + "Account/Login?retUrl=" + window.location.href;
+            //    layer.close(index);
+            //});
+            state.onNotLogin();
+            return;
+        }
+
+        var qGuid = state.getQuestionGuid.call(this, target);
+        var groups = getFavoriteGroup(state.urlGetFavoriteGroup, state.onNotLogin);
+        var html = state.rander(target, null, groups);
+        layer.open({
+            type: 1, fix: false, title: "选择题库", shade: false,
+            shade: 0.6, //遮罩透明度
+            closeBtn: 0, area: [state.width, state.height], //宽度，高度
+            content: html,
+            success: function (layero, index) {
+                bindClickEvent(state, qGuid);
+                initCheckedGroup(state.urlGetQuestionGroup + qGuid, state.onNotLogin);
+            }
+        });
+    };
+    function getFavoriteGroup(api, onNotLogin) {
+        //var groups = $.data(document.getElementsByTagName("body"), "FavoriteGroup");
+        var groups = $("body").data("FavoriteGroup");
+        if (groups) {
+            return groups;
+        } else {
+            if (api) {
+                layer.load(3);
+                $.ajax({
+                    type: "POST", url: api, dataType: "json", async: false, cache: false,
+                    contentType: "application/json",
+                    success: function (data) {
+                        layer.closeAll('loading');
+                        if (data != null && data.ErrorCode == 'E0006') {
+                            groups = data.FavoritQeuestions;
+                            //$.data(document.getElementsByTagName("body"), "FavoriteGroup", data.FavoritQeuestions);
+                            $("body").data("FavoriteGroup", data.FavoritQeuestions);
+                        }
+                        else if (data != null && data.ErrorCode == 'NoLogin') {
+                            if (onNotLogin && typeof onNotLogin == "function") {
+                                onNotLogin();
+                            }
+                        }
+                    },
+                    error: function (xmlHttpRequest, textStatus, errorThrown) {
+                        layer.closeAll('loading');
+                    }
+                });
+            }
+        }
+        return groups;
+    };
+    function showFormView() {
+        $('.add-new-group-button').hide();
+        $('.add-new-group-input').show();
+    };
+    function hideFormView() {
+        $('.add-new-group-input').hide();
+        $('.add-new-group-button').show();
+        $(".add-new-group-alert").text('');
+    };
+    function initCheckedGroup(url, onNotLogin) {
+        layer.load(3);
+        $.ajax({
+            type: "POST", contentType: "application/json", dataType: "json", url: url,
+            success: function (data) {
+                layer.closeAll('loading');
+                if (data != null && data.ErrorCode == 'E0006') {
+                    if (data.FavoritequestionsList != null && data.FavoritequestionsList.length > 0) {
+                        for (var i = 0; i < data.FavoritequestionsList.length; i++) {
+                            $('#group' + data.FavoritequestionsList[i].FavoriteID).attr("checked", true);
+                        }
+                    }
+                }
+                else if (data != null && data.ErrorCode == 'NoLogin') {
+                    if (onNotLogin && typeof onNotLogin == "function") {
+                        onNotLogin();
+                    }
+                }
+                else {
+                    layer.alert(data.ErrorMessage || "未知错误", { icon: 2 });
+                }
+            },
+            error: function (xmlHttpRequest, textStatus, errorThrown) {
+                layer.closeAll('loading');
+                layer.alert('ERROR:与服务器通讯异常', { icon: 2 });
+            }
+        });
+    };
+    function submitAddNewFavorite(url, onSuccess) {
+        var favoriteName = $("input[name=FavoriteName]").val();
+        if (favoriteName == '' || favoriteName.trim() == '') {
+            $(".add-new-group-alert").text('请输入分组名！');
+            return;
+        } else {
+            if (containIllegalChar(favoriteName)) {
+                $(".add-new-group-alert").text('分组名不能包含特殊字符！');
+                return;
+            } else if (removeHTMLTag(favoriteName) != favoriteName) {
+                $(".add-new-group-alert").text('分组名不能包含html标记！');
+                return;
+            } else if (getStrLength(favoriteName) > 16) {
+                $(".add-new-group-alert").text('分组名不能大于16个字符！');
+                return;
+            } else if (favoriteName == "未分组") {
+                $(".add-new-group-alert").text('您输入的分组名称不合法！');
+                return;
+            } else {
+                var isExist = false;
+                $.each(getFavoriteGroup(null, null), function (index, item) {
+                    if (item.Question == favoriteName) {
+                        isExist = true; return false;
+                    }
+                });
+                if (isExist) {
+                    $(".add-new-group-alert").text('该分组名称已存在，请重新输入！');
+                    return;
+                }
+            }
+        }
+        $.getJSON(url + favoriteName, function (data) {
+            if (data != null && data.ErrorCode == 'E0006') {
+                var favoriteItem = $.extend({}, { FavoriteGUID: '', GroupCount: 0, QuestionGUID: null },
+                    { FavoriteID: data.favoriteID, Question: favoriteName });
+                onAddNewFavoriteSuccess(favoriteItem);
+                if (onSuccess && typeof onSuccess == 'function') {
+                    onSuccess();
+                }
+            } else {
+                layer.alert(data.ErrorMessage || "未知错误", { icon: 2 });
+            }
+        });
+
+    }
+    function onAddNewFavoriteSuccess(data) {
+        $(".add-new-group-alert").text('');
+        $("input[name=FavoriteName]").val('');
+        hideFormView();
+        //var groups = $.data(document.getElementsByTagName("body"), "FavoriteGroup");
+        var groups = $("body").data("FavoriteGroup");
+        groups.push(data);
+        $(".group-checkbox").append($(defaultView.randerFavoriteItem(data)));
+    }
+    function addToMyFavorite(qGuid, url, onSuccess, onNotLogin) {
+        var selectGroup = '';
+        $('.group-tab-name input[type="checkbox"]:checked').each(function () {
+            selectGroup += $(this).attr('id');
+        });
+        var params = "?QuestionGUID=" + qGuid + "&selectGroup=" + selectGroup;
+        layer.load(3);
+        $.getJSON(url + params, function (data) {
+            layer.closeAll("loading");
+            if (data != null && data.ErrorCode == 'E0006') {
+                if (data.resultCode == '001') {
+                    layer.closeAll();
+                    layer.msg("收藏成功");
+                    if (onSuccess && typeof onSuccess == "function") {
+                        onSuccess();
+                    }
+                } else {//data.resultCode=='002'
+                    alert('试题插入执行失败，请重新刷新页面！');
+                }
+            } else if (data != null && data.ErrorCode == 'NoLogin') {
+                if (onNotLogin && typeof onNotLogin == "function") {
+                    onNotLogin();
+                }
+            } else {
+                layer.alert(data.ErrorMessage || "未知错误", { icon: 2 });
+            }
+        }).fail(function () {
+            layer.closeAll("loading");
+        });
+    }
+    function bindClickEvent(options, qGuid) {
+        $(".btn-form-toggle").click(showFormView);
+        $(".add-new-group-cancel").click(hideFormView);
+        $(".add-new-group-submit").click(function () {
+            submitAddNewFavorite(options.urlAddNewFavorite, options.onAddNewFavoriteSuccess);
+        });
+        $(".confirm-alert").click(function () {
+            addToMyFavorite(qGuid, options.urlAddToFavorite, options.onAddToFavoriteSuccess, options.onNotLogin);
+        });
+    };
+
+    var defaultView = {
+        rander: function (target, container, data) {
+            var body = $('<div class="add-group-alert"></div>')
+                .append(defaultView.randerBody(data));
+            return body[0].outerHTML;
+        },
+        randerFavoriteItem: function (item) {
+            var _div = '<div class="group-tab-name">' +
+                '<input type="checkbox" name="groupname" id="group' + item.FavoriteID + '" value=' + item.FavoriteGUID + ' />' +
+                '<label for="group' + item.FavoriteID + '" title="' + item.Question + '" class="tabname">' + cutStr(item.Question, 13, true) + '</label>' +
+                '</div>';
+            return _div;
+        },
+        randerBody: function (data) {
+            var cc = [];
+            cc.push('<div class="add-group-alert-inner">');
+            cc.push('<div class="group-checkbox clearfix">');//收藏夹列表
+            $.each(data, function (index, item) {
+                cc.push(defaultView.randerFavoriteItem(item));
+            });
+            cc.push('</div>');
+            cc.push('<div class="add-new-group-button clearfix">');
+            cc.push('<a href="javascript:void(0)" class="btn-form-toggle add-group-text">添加新分组</a>');
+            cc.push('<a href="javascript:void(0)" class="btn-form-toggle add-new-group-image"></a>');
+            cc.push('</div>');
+            cc.push('<div class="add-new-group-input" style="display: none">');
+            cc.push('<input id="new-group-input-area" name="FavoriteName" type="text" value="" /> ');
+            cc.push('<a class="add-new-group-submit">添加</a> ');
+            cc.push('<a class="add-new-group-cancel">取消</a>');
+            cc.push('</div>');
+            cc.push('<div class="add-new-group-alert"></div>');// 错误提示
+            cc.push('</div>');
+            cc.push('<div class="btn-wrap"><div class="box">');
+            cc.push('<a onclick="layer.closeAll();" class="close-alert">取 消</a>');
+            cc.push('<a href="javascript:void(0)" class="confirm-alert">确 认</a>');
+            cc.push('</div></div>');
+            return cc.join("");
+        },
+        randerButtons: function () {
+            var cc = [];
+            return cc.join('');
+        }
+    };
+    $.fn.collectQuestion = function (options, param) {
+        if (typeof options == "string") {
+            var method = $.fn.datacard.methods[options];
+            if (method) {
+                return method(this, param);
+            } else {
+                return null;
+            }
+        }
+        options = options || {};
+        return this.each(function () {
+            var state = $.data(this, "collectQuestion");
+            if (state) {
+                $.extend(state, options);
+            } else {
+                state = $.data(this, "collectQuestion", $.extend({}, $.fn.collectQuestion.defaults, options));
+            }
+            create(this);
+        });
+    };
+    $.fn.collectQuestion.methods = {
+        options: function (jq) {
+            return $.data(jq, 'collectQuestion');
+        }
+    };
+    $.fn.collectQuestion.defaults = $.extend({}, {
+        getQuestionGuid: function (target) {
+            return $(target).attr("data-qGuid");
+        },
+        rander: defaultView.rander,
+        width: 458,
+        height: 302,
+        onAddNewFavoriteSuccess: null,
+        onAddToFavoriteSuccess: null,
+        onNotLogin: function () {
+            //0=！；1=对勾；2=X;3=?;4=锁；5=哭脸；6=笑脸；
+            layer.alert('请先登录！', { icon: 4, skin: 'layer-ext-moon' });
+        },
+        hasLogin: true,
+        urlGetFavoriteGroup: "/api/Search/GetSearchFavaror/",
+        urlGetQuestionGroup: "/api/Search/GetSelectGroup?QuestionGUID=",
+        urlAddNewFavorite: "/api/Search/AddGroup?Question=",
+        urlAddToFavorite: "/api/Search/UpdatItemGroupTrain"
+    });
+})(jQuery);
+

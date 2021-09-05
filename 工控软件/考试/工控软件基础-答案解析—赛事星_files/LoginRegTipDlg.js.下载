@@ -1,0 +1,68 @@
+﻿/*
+ * 登录弹出框，依赖于 layer.js，webConfig.js
+ */
+var reset_css = DomainUrlHelper.SourchPath + "css/2017/reset.css";
+var style_css = DomainUrlHelper.SourchPath + "css/2017/style.css";
+if (!isInclude(reset_css)) {
+    dynamicLoading.css(reset_css);
+}
+if (!isInclude(style_css)) {
+    dynamicLoading.css(style_css);
+}
+var LoginRegTip = {
+    renderDialog: function (tipText, btnUrl1, btnUrl2, btnTxt1, btnTxt2) {
+        if (tipText == "" || tipText == undefined || tipText == null) {
+            tipText = "参加竞赛需要绑定手机号码";
+        }
+        return '<div class="alert">'
+             + '    <div class="alert-top">'
+             + '        <div class="alert-title">提示</div>'
+             //+ '        <a href="#" onclick="layer.closeAll()" class="alert-close">×</a>'
+             + '    </div>'
+             + '    <div class="alert-body">'
+             + '        <div class="alert-wjrelate-no">' + tipText + '</div>'
+             + '        <div class="alert-bottom clearfix">'
+             + '            <div class="alert-bottom-inner alert-bottom-inner-jg clearfix">'
+             + '                <a href="' + btnUrl1 + '" class="alert-bottom-btn">' + btnTxt1 + '</a>'
+             + '                <a href="' + btnUrl2 + '" class="alert-bottom-btn alert-bottom-btn-primary">' + btnTxt2 + '</a>'
+             + '            </div>'
+             + '        </div>'
+             + '    </div>'
+             + '</div>';
+    },
+    open1: function (tipText, btnUrl1, btnUrl2, btnTxt1, btnTxt2) {
+        var i = layer.open({
+            type: 1,
+            //id: 'dialog',
+            //maxmin: true,
+            //closeBtn: 0,
+            fix: false,
+            title: false,
+            //offset: '100px',
+            area: ['480px', '235px'],
+            //shade: [0.6, '#000'],
+            shadeClose: false, //点击遮罩关闭
+            //skin: 'layui-layer-molv', //样式类名
+            content: this.renderDialog(tipText, btnUrl1, btnUrl2, btnTxt1, btnTxt2)
+        });
+        return i;
+    },
+    open: function (tipTextL, tipTextM, tipTextR, btnUrl1, btnUrl2, btnTxt1, btnTxt2) {
+        var tipText = tipTextL + "<span class=\"color-red\">" + tipTextM + "</span>" + tipTextR;
+        var i = layer.open({
+            type: 1,
+            //id: 'dialog',
+            //maxmin: true,
+            //closeBtn: 0,
+            fix: false,
+            title: false,
+            //offset: '100px',
+            area: ['480px', '235px'],
+            //shade: [0.6, '#000'],
+            shadeClose: false, //点击遮罩关闭
+            //skin: 'layui-layer-molv', //样式类名
+            content: this.renderDialog(tipText, btnUrl1, btnUrl2, btnTxt1, btnTxt2)
+        });
+        return i;
+    }
+};

@@ -1,0 +1,71 @@
+﻿function addfavorite() {
+    try {
+        if (document.all) {
+            window.external.addFavorite('http://saishi.cnki.net', '网络竞赛考试服务平台—赛事星！');
+        }
+        else if (window.sidebar) {
+            window.sidebar.addPanel('网络竞赛考试服务平台—赛事星！', 'http://saishi.cnki.net', "网络竞赛考试服务平台—赛事星！");
+        }
+        else {
+            alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请按 Ctrl+D 手动收藏！");            
+        }
+    } catch (e) {
+        alert("抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请按 Ctrl+D 手动收藏！");
+    }
+}
+function LayerMsg(msg) {
+    if (layer) {
+        layer.msg(msg);
+    } else {
+        alert(msg);
+    }
+}
+
+function GetMessageCount(success) {
+    try {
+        var reqUrl = "/api/User/MessageCount";
+        $.getJSON(reqUrl, "", function (data) {
+            if (data) {
+                success(data);
+            }
+        });
+    } catch (e) {
+        alert(e);
+    }
+}
+
+$().ready(function () {
+    $(".nav-mini-right .person-nichen").hover(function () {
+        $("ul.login-user-dropdown2").show();
+    }, function () {
+        $("ul.login-user-dropdown2").hide();
+    });
+    $("li .red-dot").hide();
+    if ($(".person-nichen  a span").length>0) {
+        GetMessageCount(function (data) {
+            $(".person-nichen  a span").html('' + data.MessageCountTotal);
+            if (data.MessageCountInstitution > 0) {
+                $("a.jigouxiaoxi").siblings(".red-dot").show();
+            }
+            if (data.MessageCountPerson > 0) {
+                $("a.xiaoxi").siblings(".red-dot").show();
+            }
+        });
+    }
+
+    // header1
+    if ($("#header-usernick").length > 0) {
+        $("#header-user").hover(function () {
+            $("#header-menu").show();
+        }, function () {
+            $("#header-menu").hide();
+        });
+        GetMessageCount(function (data) {
+            if (data.MessageCountTotal > 0) {
+                $("#header-usernick").find(".number").html(data.MessageCountTotal);
+                $("#header-menu").find(".red-dot").show();
+            }
+        });
+    }
+
+});
