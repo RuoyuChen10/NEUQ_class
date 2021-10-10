@@ -20,7 +20,7 @@ http://zhoudaxiaa.gitee.io/downgit/#/home
 
  在浏览器插件中搜索github加速，下载很多插件使用人数多的
 
-![image-20211010212459868](C:\Users\Administrator.WIN-948T8Q810Q2\AppData\Roaming\Typora\typora-user-images\image-20211010212459868.png)重新进入，可以看到
+![image-20211010212459868](https://github.com/XTL-666/NEUQ_class/blob/main/image-20211010212459868.png)重新进入，可以看到
 
 ![image-20211010212649491](C:\Users\Administrator.WIN-948T8Q810Q2\AppData\Roaming\Typora\typora-user-images\image-20211010212649491.png)
 
