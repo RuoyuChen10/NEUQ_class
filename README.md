@@ -16,6 +16,16 @@ NEUQ 17级测控技术与仪器专业老学长，GPA第2，在就读期间多以
 
 http://zhoudaxiaa.gitee.io/downgit/#/home
 
+### 由于文件较大gitclone会超时，提供解决方法
+
+ 在浏览器插件中搜索github加速，下载很多插件使用人数多的
+
+![image-20211010212459868](C:\Users\Administrator.WIN-948T8Q810Q2\AppData\Roaming\Typora\typora-user-images\image-20211010212459868.png)重新进入，可以看到
+
+![image-20211010212649491](C:\Users\Administrator.WIN-948T8Q810Q2\AppData\Roaming\Typora\typora-user-images\image-20211010212649491.png)
+
+复制链接，git clone + 链接，速度会快很多
+
 ## 4. 课设与实验报告
 
 课设一般直接在根目录
