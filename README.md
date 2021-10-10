@@ -22,7 +22,7 @@ http://zhoudaxiaa.gitee.io/downgit/#/home
 
 ![image-20211010212459868](https://github.com/XTL-666/NEUQ_class/blob/main/image-20211010212459868.png)重新进入，可以看到
 
-![image-20211010212649491](C:\Users\Administrator.WIN-948T8Q810Q2\AppData\Roaming\Typora\typora-user-images\image-20211010212649491.png)
+![image-20211010212649491](https://github.com/XTL-666/NEUQ_class/blob/main/image-20211010212649491.png)
 
 复制链接，git clone + 链接，速度会快很多
 
